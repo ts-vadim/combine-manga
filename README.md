@@ -1,4 +1,4 @@
-Simple script for combining [lirix360](https://github.com/lirix360)'s [Manga Grabber](https://github.com/lirix360/ReadmangaGrabber)'s output.
+Simple script for combining [ReadmangaGrabber](https://github.com/lirix360/ReadmangaGrabber)'s output.
 
 ## Requirements
 - [PyPDF2](https://pypi.org/project/PyPDF2/) module
@@ -9,15 +9,17 @@ pip install PyPDF2
 
 ## Usage
 ```
-combine-manga.py [-h] FOLDER
+combine-manga.py [-h] [--no-repeats] FOLDER
 
-	Combines manga pages into one PDF
+  Combines manga pages into one PDF
 
-	positional arguments:
-	  FOLDER      Specify folder containing manga volumes
+  positional arguments:
+    FOLDER        Specify folder containing manga volumes
 
-	options:
-	  -h, --help  show this help message and exit
+  options:
+    -h, --help    show this help message and exit
+    --no-repeats  Don't include pages that had already been added (enable this only if you actually see
+                  repeated pages in final PDF)
 ```
 
 ## Manga folder structure
