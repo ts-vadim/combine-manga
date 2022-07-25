@@ -1,7 +1,7 @@
 Simple script for combining [lirix360](https://github.com/lirix360)'s [Manga Grabber](https://github.com/lirix360/ReadmangaGrabber)'s output.
 
 ## Requirements
-- [PyPDF2] module
+- [PyPDF2](https://pypi.org/project/PyPDF2/) module
 
 ```
 pip install PyPDF2
@@ -25,9 +25,9 @@ combine-manga.py [-h] FOLDER
 manga_name/ - specified folder
   vol1/
     1.pdf
-	2.pdf
-	3.pdf
+    2.pdf
+    3.pdf
   vol2/
-	4.pdf
-	5.pdf
+    4.pdf
+    5.pdf
 ```
