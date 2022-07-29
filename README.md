@@ -21,12 +21,12 @@ combine-manga.py [-h] [--no-repeats] FOLDER
     --no-repeats  Don't include pages that had already been added (enable this only if you actually see
                   repeated pages in final PDF)
 ```
-Run `bash install.sh` to add the script to `/usr/local/bin` folder
+Run `bash install.sh` to add the script to `/usr/local/bin`
 
 
-## Manga folder structure
+## Specified folder structure
 ```
-manga_name/ - specified folder
+specified_folder/
   vol1/
     1.pdf
     2.pdf
