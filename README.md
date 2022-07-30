@@ -9,22 +9,21 @@ pip install PyPDF2
 
 ## Usage
 ```
-combine-manga.py [-h] [--no-repeats] FOLDER
+merge-pdf [-h] [-r] FOLDER
 
-  Combines manga pages into one PDF
+  Combines PDFs into a single document
 
   positional arguments:
-    FOLDER        Specify folder containing manga volumes
+    FOLDER           Specify folder
 
   options:
-    -h, --help    show this help message and exit
-    --no-repeats  Don't include pages that had already been added (enable this only if you actually see
-                  repeated pages in final PDF)
+    -h, --help       show this help message and exit
+    -r, --recursive  Include subfolders of a specified directory
 ```
 Run `bash install.sh` to add the script to `/usr/local/bin`
 
 
-## Specified folder structure
+## Supposed specified folder structure
 ```
 specified_folder/
   vol1/
