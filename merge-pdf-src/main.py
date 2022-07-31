@@ -5,33 +5,32 @@ def main(args: dict):
 	'''200 IQ stuff goes here'''
 
 	specified_folder = os.path.abspath(args['FOLDER'])
+	final_pdf_path = specified_folder + '.pdf'
 	merger = PdfFileMerger()
 	index = list()
 
-	add_folder_to_index(specified_folder, index, readable_path=os.path.basename(specified_folder)+'/')
+	include_formats = ['pdf']
+	if args['include_comics']:
+		include_formats.extend(['cbr', 'cbz'])
+
+	add_folder_to_index(specified_folder, index, include_formats, readable_path=os.path.basename(specified_folder)+'/')
 
 	# TODO: combine PDFs folder by folder
 	if args['recursive']:
 		for subfolder in get_subfolders_of(specified_folder):
-			add_folder_to_index(subfolder, index, readable_path=os.path.basename(specified_folder)+'/'+os.path.basename(subfolder)+'/')
+			add_folder_to_index(subfolder, index, include_formats, readable_path=os.path.basename(specified_folder)+'/'+os.path.basename(subfolder)+'/')
 
-	# if args['no_repeats']:
-	# 	index = remove_repeats(index)
+	sort_index(index)
 
-	order_pdfs(index)
+	add_files_to_merger(index, merger)
 
-	for pdf in index:
-		merger.append(pdf)
-		print('\r' + (' ' * 40) + f"\rAdded '{os.path.basename(pdf)}'", end='')
-	print('\r' + (' ' * 40) + f"\rAdded {len(index)} files")
+	if len(index) > 0:
+		print(f"Saving to '{os.path.basename(final_pdf_path)}'...")
+		with open(final_pdf_path, 'wb') as pdf:
+			merger.write(pdf)
+		print('Done.')
 
-	final_pdf_path = specified_folder + '.pdf'
-	print(f"Saving to '{os.path.basename(final_pdf_path)}'...")
-	with open(final_pdf_path, 'wb') as pdf:
-		merger.write(pdf)
-		merger.close()
-
-	print('Done.')
+	merger.close()
 
 
 if __name__ == '__main__':
