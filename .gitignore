@@ -1,8 +1,8 @@
 # Files
-test.pdf
+test*.pdf
 
 # Folders
-test/
+test*/
 
 
 # Byte-compiled / optimized / DLL files
