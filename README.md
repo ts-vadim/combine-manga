@@ -11,6 +11,9 @@ pip install PyPDF2 pillow rarfile
 sudo apt install unrar
 ```
 
+## Known problems
+- High RAM usage
+
 ## Usage
 ```
 merge-pages [-h] [-r] FOLDER
