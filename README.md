@@ -54,11 +54,11 @@ Done.
 
 user@pc:~$ merge-pages ./spider-man --comics
 Searching in spider-man/
-Adding 'spider-main-1.cbr'
-Adding 'spider-main-2.cbr'
-Adding 'spider-main-3.cbr'
-Adding 'spider-main-4.cbr'
-Adding 'spider-main-5.cbr'
+Adding 'spider-man-1.cbr'
+Adding 'spider-man-2.cbr'
+Adding 'spider-man-3.cbr'
+Adding 'spider-man-4.cbr'
+Adding 'spider-man-5.cbr'
 Added 5 files
 Saving to 'spider-man.pdf'...
 Done.
