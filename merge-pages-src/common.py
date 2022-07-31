@@ -21,26 +21,29 @@ def sort_index(index: list):
 
 
 def add_files_to_merger(index: list, merger: PdfFileMerger):
-	for file in index:
-		merger.append(make_pdf_from_file(file))
-		print(f"Added '{os.path.basename(file)}'")
+	for fp in index:
+		print(f"Adding '{os.path.basename(fp)}'")
+		fileobj = make_pdf_from_file(fp)
+		merger.append(fileobj)
+		fileobj.close()
 	print(f"Added {len(index)} files")
 
 
 def create_argparser() -> object:
-	arg_parser = argparse.ArgumentParser(prog='merge-pdf', description="Combines PDFs into a single document")
-	arg_parser.add_argument('FOLDER', help="Specify folder")
+	arg_parser = argparse.ArgumentParser(prog='merge-pages', description="Combines PDFs or comic books into a single PDF document")
+	arg_parser.add_argument('FOLDER', help="specify folder")
 	arg_parser.add_argument(
 		'-r',
 		'--recursive',
 		dest='recursive',
 		action='store_true',
-		help='Include subfolders of a specified directory'
+		help='include subfolders of a specified directory'
 	)
 	arg_parser.add_argument(
+		'-c',
 		'--comics',
 		dest='include_comics',
 		action='store_true',
-		help='Include comic book files (CBR and CBZ file types)'
+		help='include comic book files (CBR and CBZ file types)'
 	)
 	return arg_parser

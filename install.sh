@@ -1,7 +1,7 @@
 #!/bin/bash
 
-rm -r /usr/local/bin/combine-manga-src &> /dev/null
-rm -r /usr/local/bin/combine-manga &> /dev/null
-cp -f -r ./combine-manga-src /usr/local/bin/combine-manga-src
-cp -f ./combine-manga /usr/local/bin/combine-manga
-chmod +x /usr/local/bin/combine-manga
+rm -r /usr/local/bin/merge-pages-src &> /dev/null
+rm -r /usr/local/bin/merge-pages &> /dev/null
+cp -f -r ./merge-pages-src /usr/local/bin/merge-pages-src
+cp -f ./merge-pages /usr/local/bin/merge-pages
+chmod +x /usr/local/bin/merge-pages

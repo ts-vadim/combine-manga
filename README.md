@@ -1,36 +1,65 @@
-Simple script for combining [ReadmangaGrabber](https://github.com/lirix360/ReadmangaGrabber)'s output.
+Simple script for combining [ReadmangaGrabber](https://github.com/lirix360/ReadmangaGrabber)'s output and comic book volumes in `cbr` or `cbz` formats.
 
 ## Requirements
-- [PyPDF2](https://pypi.org/project/PyPDF2/) module
+- `PyPDF2`
+- `Pillow`
+- `rarfile`
+- `unrar` utility
 
 ```
-pip install PyPDF2
+pip install PyPDF2 pillow rarfile
+sudo apt install unrar
 ```
 
 ## Usage
 ```
-merge-pdf [-h] [-r] FOLDER
+merge-pages [-h] [-r] FOLDER
 
-  Combines PDFs into a single document
+  Combines PDFs or comic books into a single PDF document
 
   positional arguments:
-    FOLDER           Specify folder
+    FOLDER           specify folder
 
   options:
     -h, --help       show this help message and exit
-    -r, --recursive  Include subfolders of a specified directory
+    -r, --recursive  include subfolders of a specified directory
+    -c, --comics     include comic book files (CBR and CBZ file types)
 ```
 Run `bash install.sh` to add the script to `/usr/local/bin`
 
 
-## Supposed specified folder structure
+## Sample output
 ```
-specified_folder/
-  vol1/
-    1.pdf
-    2.pdf
-    3.pdf
-  vol2/
-    4.pdf
-    5.pdf
+user@pc:~$ merge-pages ./test --recursive
+Searching in test/
+Searching in test/vol2/
+Searching in test/vol1/
+Adding '1.pdf'
+Adding '2.pdf'
+Adding '3.pdf'
+Adding '4.pdf'
+Adding '5.pdf'
+Adding '6.pdf'
+Adding '6.pdf'
+Adding '7.pdf'
+Adding '8.pdf'
+Adding '9.pdf'
+Adding '10.pdf'
+Adding '11.pdf'
+Adding '12.pdf'
+Adding '13.pdf'
+Added 14 files
+Saving to 'test.pdf'...
+Done.
+
+user@pc:~$ merge-pages ./spider-man --comics
+Searching in spider-man/
+Adding 'spider-main-1.cbr'
+Adding 'spider-main-2.cbr'
+Adding 'spider-main-3.cbr'
+Adding 'spider-main-4.cbr'
+Adding 'spider-main-5.cbr'
+Added 5 files
+Saving to 'spider-man.pdf'...
+Done.
 ```
