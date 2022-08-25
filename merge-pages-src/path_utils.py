@@ -7,7 +7,7 @@ def get_filetype(filename: str) -> str:
 
 def get_file_order(filename: str) -> int:
 	name = os.path.basename(filename[:filename.rindex('.')])
-	numbers_in_name = '0' + ''.join(list(filter(lambda c: c.isnumeric(), name)))
+	numbers_in_name = '0' + ''.join(list(filter(lambda c: c.isnumeric() or c == '.', name)))
 	return int(numbers_in_name)
 
 
