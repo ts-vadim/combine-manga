@@ -1,4 +1,5 @@
-Simple script for combining [ReadmangaGrabber](https://github.com/lirix360/ReadmangaGrabber)'s output and comic book volumes in `cbr` or `cbz` formats.
+Simple script for combining PDFs and CBRs into a single document.
+Originally was created to merge manga chapters from [ReadmangaGrabber](https://github.com/lirix360/ReadmangaGrabber) and [HakuNeko](https://github.com/manga-download/hakuneko).
 
 ## Requirements
 - `PyPDF2`
@@ -16,7 +17,7 @@ sudo apt install unrar
 
 ## Usage
 ```
-merge-pages [-h] [-r] FOLDER
+merge-pages [-h] [-r] [-c] FOLDER
 
   Combines PDFs or comic books into a single PDF document
 
