@@ -1,13 +1,6 @@
 Simple script for combining PDFs and CBRs into a single document.
 Originally was created to merge manga chapters from [ReadmangaGrabber](https://github.com/lirix360/ReadmangaGrabber) and [HakuNeko](https://github.com/manga-download/hakuneko).
 
-## Libraries used
-- [rich](https://rich.readthedocs.io/en/latest/)
-- [humanize](https://pypi.org/project/humanize/)
-- [pypdf](https://pypdf.readthedocs.io/en/latest/)
-- [natsort](https://github.com/SethMMorton/natsort)
-- [Pillow](https://pillow.readthedocs.io/en/stable)
-
 ## Install
 On Linux
 ```
