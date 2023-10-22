@@ -1,3 +1,10 @@
+> **NOTE**
+>
+> The memory management is terrible.
+> So simply use `pdfunite` instead.
+
+---
+
 Simple script for combining PDFs and CBRs into a single document.
 Originally was created to merge manga chapters from [ReadmangaGrabber](https://github.com/lirix360/ReadmangaGrabber) and [HakuNeko](https://github.com/manga-download/hakuneko).
 
